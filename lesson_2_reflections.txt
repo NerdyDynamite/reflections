@@ -1,16 +1,71 @@
 What happens when you initialize a repository? Why do you need to do it?
 
-	Initializing a repository creates a .git folder with the files that are needed for git's 
-	commit functionality. Git needs this folder to keep metadata pertaining to the history of 
-	the files within the repository.
+	Initializing a repository creates a .git folder with the files that 
+	are needed for git's commit functionality. Git needs this folder to 
+	keep metadata pertaining to the history of the files within the 
+	repository.
 
-	How is the staging area different from the working directory and the repository? What value 
-	do you think it offers?
+How is the staging area different from the working directory and the repository? What value 
+do you think it offers?
 
-		The staging area is a virtual space that contains the files that will be added to the 
-		commit history once the commit command is run. This is different from the working 
-		directory and repository because the files there may or may not be committed depending 
-		on whether or not they have been added to the staging area. This functionality is 
-		useful because not all the files have to be committed, and it is up to the user to 
-		decide which to commit. Further down the line, I suspect it will save time when 
+		The staging area is a virtual space that contains the files that 
+		will be added to the 
+		commit history once the commit command is run. This is different 
+		from the working 
+		directory and repository because the files there may or may not be 
+		committed depending 
+		on whether or not they have been added to the staging area. This 
+		functionality is 
+		useful because not all the files have to be committed, and it is 
+		up to the user to 
+		decide which to commit. Further down the line, I suspect it will 
+		save time when 
 		checking out the history of changes within the git interface.
+
+How can you use the staging area to make sure you have one commit per logical change?
+
+	Only add the files that pertain to the single logical change and then 
+	commit. For the next logical change, add the respective files and 
+	commit them as well.
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+	If making experimental changes, or entirely new versions of code, 
+	branches are helpful in keeping the versions distinct but easily 
+	accessible. When making a branch, a whole new path for commits is 
+	made, and the programmer can create changes without worrying about the 
+	original code on the master branch.
+
+How do the diagrams help you visualize the branch structure?
+
+	In the diagram, you can see from which commit each branch comes from. 
+	In addition, the unreachable commits, if any, are easily visible. The 
+	branch structure will consist of the first parentless commit to the 
+	far left. From that, two or more branches grow towards the right and 
+	possibly branch into other sections. The rightmost point of the 
+	current branch is known as the head.
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+	Merging two branches compares the two most recent commits in each 
+	branch with the commit at dividing point of the two branches. Lines 
+	that are the same in all three commits are kept. Lines that are 
+	present in the commit at the branch origin but not present in either 
+	of the commits at the head of each branch are removed. Finally, new 
+	lines in either of the branch head commits that are not present in the 
+	old commit are added.
+
+	The diagram is represented the way it is because branching, as its 
+	name implies involves branching. The diagram is shown like a tree with 
+	many branches allowing the user to easily follow along with the file 
+	history git has made. 
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+	Pros: 	- saves time going line by line comparing and adding, or 
+			communicating with co-workers to merge code
+			- extremely accurate in terms of just adding and subtracting 
+			lines of code
+
+	Cons: 	- the user may not know 100% what is being kept and being 
+			changed, especially if they are not familiar with git
